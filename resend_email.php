@@ -32,28 +32,16 @@ $DB->set_field('user', 'password', $hashedpassword, ['id' => $user->id]);
 $sitename = format_string($SITE->fullname);
 
 // Créer le contenu de l'email avec le nom d'utilisateur
-$subject = "Votre nouveau compte sur {$sitename}";
-$message = "
-Bonjour {$user->firstname} {$user->lastname},
+$subject = get_string('subject','local_resend_password_profile') ." {$sitename}";
+$message_template = get_string('accountcreatedmessage', 'local_resend_password_profile');
 
-Un nouveau compte a été créé pour vous sur le site « {$sitename} » et un mot de passe temporaire vous a été délivré.
+// Remplace les variables dans le message
+$message = str_replace(
+    ['{firstname}', '{lastname}', '{sitename}', '{username}', '{newpassword}', '{wwwroot}'],
+    [$user->firstname, $user->lastname, $sitename, $user->username, $newpassword, $CFG->wwwroot],
+    $message_template
+);
 
-Les informations nécessaires à votre connexion sont maintenant :
-nom d’utilisateur : {$user->username}
-mot de passe : {$newpassword}
-
-Vous devrez changer votre mot de passe lors de votre première connexion.
-
-Pour commencer à travailler sur « {$sitename} », veuillez vous connecter en cliquant sur le lien ci-dessous :
-{$CFG->wwwroot}/login/?lang=fr
-
-Dans la plupart des logiciels de courriel, cette adresse devrait apparaître comme un lien de couleur bleue qu’il vous suffit de cliquer. Si cela ne fonctionne pas, copiez ce lien et collez-le dans la barre d’adresse de votre navigateur web.
-
-Si vous avez besoin d’aide, veuillez contacter l’administrateur du site « {$sitename} » en cliquant sur ce lien :
-<a href='{$CFG->wwwroot}/user/contactsitesupport.php'>Contacter l’assistance du site</a>.
-
-{$sitename}
-";
 
 // Envoyer l'email à l'utilisateur
 if (email_to_user($user, get_admin(), $subject, $message)) {
