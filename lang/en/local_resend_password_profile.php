@@ -1,16 +1,28 @@
 <?php
-$string['pluginname'] = 'resend password profile';
-$string['category'] = "Resend activation email";
-$string['button'] = "Resend";
-$string['emailresent'] = "The activation email has been successfully resent.";
-$string['emailnotresent'] = "Error while resending the activation email.";
+// This file is part of Moodle - https://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-$string['credits'] = 'Développé par François Garnier';
+/**
+ * EN Lang file is defined here.
+ *
+ * @package     local_resend_password_profile
+ * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-$string['subject'] = 'Your new account on';
-
-$string['accountcreatedmessage'] = "
-Hello {firstname} {lastname},
+$string['accountcreatedmessage'] = "Hello {firstname} {lastname},
 
 A new account has been created for you on the site « {sitename} » and a temporary password has been issued to you.
 
@@ -28,7 +40,11 @@ In most email clients, this address should appear as a blue clickable link. If i
 If you need help, please contact the administrator of the site « {sitename} » by clicking this link:
 <a href='{wwwroot}/user/contactsitesupport.php'>Contact site support</a>.
 
-{sitename}
-";
-
-
+{sitename}";
+$string['button'] = "Resend";
+$string['category'] = "Resend activation email";
+$string['credits'] = 'Développé par François Garnier';
+$string['emailnotresent'] = "Error while resending the activation email.";
+$string['emailresent'] = "The activation email has been successfully resent.";
+$string['pluginname'] = 'resend password profile';
+$string['subject'] = 'Your new account on';

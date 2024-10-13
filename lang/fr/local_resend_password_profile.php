@@ -1,16 +1,28 @@
 <?php
-$string['pluginname'] = 'resend password profile';
-$string['category'] = "Renvoyer l'email d'activation";
-$string['button'] = "Renvoyer";
-$string['emailresent'] = "L'email d'activation a été renvoyé avec succès.";
-$string['emailnotresent'] = "Erreur lors du renvoi de l'email d'activation.";
+// This file is part of Moodle - https://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-$string['credits'] = 'Développé par François Garnier';
+/**
+ * FR Lang file is defined here.
+ *
+ * @package     local_resend_password_profile
+ * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-$string['subject'] = 'Votre nouveau compte sur';
-
-$string['accountcreatedmessage'] = "
-Bonjour {firstname} {lastname},
+$string['accountcreatedmessage'] = "Bonjour {firstname} {lastname},
 
 Un nouveau compte a été créé pour vous sur le site « {sitename} » et un mot de passe temporaire vous a été délivré.
 
@@ -28,5 +40,12 @@ Dans la plupart des logiciels de courriel, cette adresse devrait apparaître com
 Si vous avez besoin d’aide, veuillez contacter l’administrateur du site « {sitename} » en cliquant sur ce lien :
 <a href='{wwwroot}/user/contactsitesupport.php'>Contacter l’assistance du site</a>.
 
-{sitename}
-";
+{sitename}";
+$string['pluginname'] = 'resend password profile';
+$string['button'] = "Renvoyer";
+$string['category'] = "Renvoyer l'email d'activation";
+$string['credits'] = 'Développé par François Garnier';
+$string['emailnotresent'] = "Erreur lors du renvoi de l'email d'activation.";
+$string['emailresent'] = "L'email d'activation a été renvoyé avec succès.";
+$string['subject'] = 'Votre nouveau compte sur';
+
