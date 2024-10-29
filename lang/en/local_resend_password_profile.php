@@ -22,9 +22,14 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['accountcreatedmessage'] = "Hello {firstname} {lastname},
+$string['button'] = "Resend";
+$string['category'] = "Resend activation email";
+$string['credits'] = 'Développé par François Garnier';
+$string['emailnotresent'] = "Error while resending the activation email.";
+$string['emailresent'] = "The activation email has been successfully resent.";
+$string['existingusernewpasswordtext'] = "Hello {firstname} {lastname},
 
-A new account has been created for you on the site « {sitename} » and a temporary password has been issued to you.
+Your account has been updated for you on the site « {sitename} » and a temporary password has been issued to you.
 
 The information required for your login is now:
 username: {username}
@@ -41,10 +46,5 @@ If you need help, please contact the administrator of the site « {sitename} » 
 <a href='{wwwroot}/user/contactsitesupport.php'>Contact site support</a>.
 
 {sitename}";
-$string['button'] = "Resend";
-$string['category'] = "Resend activation email";
-$string['credits'] = 'Développé par François Garnier';
-$string['emailnotresent'] = "Error while resending the activation email.";
-$string['emailresent'] = "The activation email has been successfully resent.";
 $string['pluginname'] = 'resend password profile';
-$string['subject'] = 'Your new account on';
+$string['subject'] = 'Your account on';

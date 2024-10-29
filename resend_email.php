@@ -57,7 +57,7 @@ $sitename = format_string($SITE->fullname);
 
 // Create the email content with the username.
 $subject = get_string('subject', 'local_resend_password_profile') . " {$sitename}";
-$messagetemplate = get_string('accountcreatedmessage', 'local_resend_password_profile');
+$messagetemplate = get_string('existingusernewpasswordtext', 'local_resend_password_profile');
 
 // Replace variables in the message.
 $message = str_replace(

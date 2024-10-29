@@ -22,9 +22,14 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['accountcreatedmessage'] = "Bonjour {firstname} {lastname},
+$string['button'] = "Renvoyer";
+$string['category'] = "Renvoyer l'email d'activation";
+$string['credits'] = 'Développé par François Garnier';
+$string['emailnotresent'] = "Erreur lors du renvoi de l'email d'activation.";
+$string['emailresent'] = "L'email d'activation a été renvoyé avec succès.";
+$string['existingusernewpasswordtext'] = "Bonjour {firstname} {lastname},
 
-Un nouveau compte a été créé pour vous sur le site « {sitename} » et un mot de passe temporaire vous a été délivré.
+Votre compte a été mis à jour sur le site « {sitename} » et un mot de passe temporaire vous a été délivré.
 
 Les informations nécessaires à votre connexion sont maintenant :
 nom d’utilisateur : {username}
@@ -41,12 +46,7 @@ Si vous avez besoin d’aide, veuillez contacter l’administrateur du site « {
 <a href='{wwwroot}/user/contactsitesupport.php'>Contacter l’assistance du site</a>.
 
 {sitename}";
-$string['button'] = "Renvoyer";
-$string['category'] = "Renvoyer l'email d'activation";
-$string['credits'] = 'Développé par François Garnier';
-$string['emailnotresent'] = "Erreur lors du renvoi de l'email d'activation.";
-$string['emailresent'] = "L'email d'activation a été renvoyé avec succès.";
 $string['pluginname'] = 'resend password profile';
-$string['subject'] = 'Votre nouveau compte sur';
+$string['subject'] = 'Votre compte sur';
 
 
