@@ -82,7 +82,7 @@ if (email_to_user($user, $noreplyuser, $subject, $message)) {
     // Redirect with an error message if the email is not sent.
     redirect(new moodle_url(
         '/user/profile.php',
-        ['id' => $userid]), 
+        ['id' => $userid]),
         get_string('emailnotresent', 'local_resend_password_profile'),
         3
     );
