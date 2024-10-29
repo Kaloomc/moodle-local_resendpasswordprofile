@@ -63,7 +63,7 @@ $messagetemplate = get_string('accountcreatedmessage', 'local_resend_password_pr
 $message = str_replace(
     ['{firstname}', '{lastname}', '{sitename}', '{username}', '{newpassword}', '{wwwroot}'],
     [$user->firstname, $user->lastname, $sitename, $user->username, $newpassword, $CFG->wwwroot],
-    $message_template
+    $messagetemplate
 );
 
 // Define the site's "noreply" user.
