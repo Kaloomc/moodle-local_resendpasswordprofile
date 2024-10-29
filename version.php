@@ -25,10 +25,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_resend_password_profile';
-$plugin->version = 2024101115; // Plugin version.
+$plugin->version = 2024101116; // Plugin version.
 $plugin->requires = 2021051700; // Minimum required Moodle version.
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = 'v1.1';
+$plugin->release = 'v1.2';
 
 $plugin->credits = [
     'author' => 'François Garnier',

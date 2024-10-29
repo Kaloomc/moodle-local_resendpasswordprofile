@@ -34,6 +34,10 @@
  * @throws moodle_exception
  */
 function local_resend_password_profile_myprofile_navigation($tree, $user, $iscurrentuser, $course) {
+    // Check if the user is an administrator; if not, exit the function.
+    if (!is_siteadmin()) {
+        return;
+    }
     // Creates a new category in the user profile.
     $category = new core_user\output\myprofile\category('category', get_string('category', 'local_resend_password_profile'), null);
 
