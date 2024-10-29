@@ -41,11 +41,12 @@ Si vous avez besoin d’aide, veuillez contacter l’administrateur du site « {
 <a href='{wwwroot}/user/contactsitesupport.php'>Contacter l’assistance du site</a>.
 
 {sitename}";
-$string['pluginname'] = 'resend password profile';
 $string['button'] = "Renvoyer";
 $string['category'] = "Renvoyer l'email d'activation";
 $string['credits'] = 'Développé par François Garnier';
 $string['emailnotresent'] = "Erreur lors du renvoi de l'email d'activation.";
 $string['emailresent'] = "L'email d'activation a été renvoyé avec succès.";
+$string['pluginname'] = 'resend password profile';
 $string['subject'] = 'Votre nouveau compte sur';
+
 

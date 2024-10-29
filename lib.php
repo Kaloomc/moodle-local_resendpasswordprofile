@@ -37,7 +37,7 @@ function local_resend_password_profile_myprofile_navigation($tree, $user, $iscur
     // Creates a new category in the user profile.
     $category = new core_user\output\myprofile\category('category', get_string('category', 'local_resend_password_profile'), null);
 
-    // Creates the form with the button
+    // Creates the form with the button.
     $buttonhtml = '
     <form action="' . new moodle_url('/local/resend_password_profile/resend_email.php') . '" method="post">
         <input type="hidden" name="userid" value="' . $user->id . '">

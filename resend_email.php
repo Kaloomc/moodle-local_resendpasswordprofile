@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - https://moodle.org/.
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,61 +15,62 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * resendo email file file is defined here.
+ * Resend email file is defined here.
  *
  * @package     local_resend_password_profile
  * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(__DIR__ . '/../../config.php'); // Load the Moodle configuration
-require_once($CFG->libdir . '/moodlelib.php'); // Include necessary libraries
-require_once($CFG->libdir . '/authlib.php'); // Include authentication libraries
+require_once(__DIR__ . '/../../config.php'); // Load the Moodle configuration.
+require_once($CFG->libdir . '/moodlelib.php'); // Include necessary libraries.
+require_once($CFG->libdir . '/authlib.php'); // Include authentication libraries.
 
-require_login(); // Check that the user is logged in
-require_capability('moodle/user:create', context_system::instance()); // Check permissions
+require_login(); // Check that the user is logged in.
+require_capability('moodle/user:create', context_system::instance()); // Check permissions.
 
-// Page configuration
+// Page configuration.
 $PAGE->set_url('/local/resend_password_profile/resend_email.php');
 $PAGE->set_context(context_system::instance());
 
-// Retrieve the ID of the user to whom the email will be sent
+// Retrieve the ID of the user to whom the email will be sent.
 $userid = required_param('userid', PARAM_INT);
 
-// Load the user's information
-$user = $DB->get_record('user', array('id' => $userid), '*', MUST_EXIST);
+// Load the user's information.
+$user = $DB->get_record('user', ['id' => $userid], '*', MUST_EXIST);
 
-// Check that the user is not deleted
+// Check that the user is not deleted.
 if ($user->deleted) {
-    print_error('invaliduser'); // Display an error if the user is deleted
+    throw new moodle_exception('invaliduser', 'error'); // Display an error if the user is deleted.
 }
 
-// Generate a new password
-$newpassword = generate_password(8); // Generate a random password of 8 characters
 
-// Hash and update the user's password
+// Generate a new password.
+$newpassword = generate_password(8); // Generate a random password of 8 characters.
+
+// Hash and update the user's password.
 $hashedpassword = hash_internal_user_password($newpassword);
 $DB->set_field('user', 'password', $hashedpassword, ['id' => $user->id]);
 
-// Retrieve the full name of the site
+// Retrieve the full name of the site.
 $sitename = format_string($SITE->fullname);
 
-// Create the email content with the username
+// Create the email content with the username.
 $subject = get_string('subject', 'local_resend_password_profile') . " {$sitename}";
-$message_template = get_string('accountcreatedmessage', 'local_resend_password_profile');
+$messagetemplate = get_string('accountcreatedmessage', 'local_resend_password_profile');
 
-// Replace variables in the message
+// Replace variables in the message.
 $message = str_replace(
     ['{firstname}', '{lastname}', '{sitename}', '{username}', '{newpassword}', '{wwwroot}'],
     [$user->firstname, $user->lastname, $sitename, $user->username, $newpassword, $CFG->wwwroot],
     $message_template
 );
 
-// Send the email to the user
+// Send the email to the user.
 if (email_to_user($user, get_admin(), $subject, $message)) {
-    // Redirect with a success message if the email is sent
+    // Redirect with a success message if the email is sent.
     redirect(new moodle_url('/user/profile.php', ['id' => $userid]), get_string('emailresent', 'local_resend_password_profile'), 3);
 } else {
-    // Redirect with an error message if the email is not sent
+    // Redirect with an error message if the email is not sent.
     redirect(new moodle_url('/user/profile.php', ['id' => $userid]), get_string('emailnotresent', 'local_resend_password_profile'), 3);
 }
