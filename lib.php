@@ -25,19 +25,22 @@
 /**
  * Function local_resend_password_profile_myprofile_navigation
  *
- * @param $tree
- * @param $user
- * @param $iscurrentuser
- * @param $course
+ * Adds a button to the user's profile navigation if the user is an administrator.
  *
- * @throws coding_exception
- * @throws moodle_exception
+ * @param core_user\output\myprofile\tree $tree         The navigation tree to which the new nodes will be added.
+ * @param stdClass $user                                 The user object containing user details.
+ * @param bool $iscurrentuser                             True if the user is the current user, false otherwise.
+ * @param stdClass|null $course                           The course object if available, null otherwise.
+ *
+ * @throws coding_exception                                 If there is a coding error.
+ * @throws moodle_exception                                 If there is a Moodle related error.
  */
 function local_resend_password_profile_myprofile_navigation($tree, $user, $iscurrentuser, $course) {
     // Check if the user is an administrator; if not, exit the function.
     if (!is_siteadmin()) {
         return;
     }
+
     // Creates a new category in the user profile.
     $category = new core_user\output\myprofile\category('category', get_string('category', 'local_resend_password_profile'), null);
 
