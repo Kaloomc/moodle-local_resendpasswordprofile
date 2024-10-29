@@ -72,9 +72,19 @@ $noreplyuser = core_user::get_noreply_user();
 // Send the email to the user.
 if (email_to_user($user, $noreplyuser, $subject, $message)) {
     // Redirect with a success message if the email is sent.
-    redirect(new moodle_url('/user/profile.php', ['id' => $userid]), get_string('emailresent', 'local_resend_password_profile'), 3);
+    redirect(new moodle_url(
+        '/user/profile.php',
+        ['id' => $userid]),
+        get_string('emailresent', 'local_resend_password_profile'),
+        3
+    );
 } else {
     // Redirect with an error message if the email is not sent.
-    redirect(new moodle_url('/user/profile.php', ['id' => $userid]), get_string('emailnotresent', 'local_resend_password_profile'), 3);
+    redirect(new moodle_url(
+        '/user/profile.php',
+        ['id' => $userid]), 
+        get_string('emailnotresent', 'local_resend_password_profile'),
+        3
+    );
 }
 
