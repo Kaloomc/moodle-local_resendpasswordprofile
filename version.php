@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_resend_password_profile';
-$plugin->version = 2024101121; // Plugin version.
+$plugin->version = 2024101122; // Plugin version.
 $plugin->requires = 2021051700; // Minimum required Moodle version.
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = 'v1.4';

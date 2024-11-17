@@ -52,6 +52,8 @@ $newpassword = generate_password(8); // Generate a random password of 8 characte
 $hashedpassword = hash_internal_user_password($newpassword);
 $DB->set_field('user', 'password', $hashedpassword, ['id' => $user->id]);
 
+set_user_preference('auth_forcepasswordchange', 1, $user);
+
 // Retrieve the full name of the site.
 $sitename = format_string($SITE->fullname);
 
