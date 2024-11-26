@@ -73,4 +73,3 @@ function local_resend_password_profile_myprofile_navigation($tree, $user, $iscur
     // Adds the category to the profile tree.
     $tree->add_category($category);
 }
- 
