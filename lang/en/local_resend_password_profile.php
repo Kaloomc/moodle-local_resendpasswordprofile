@@ -24,7 +24,7 @@
 
 $string['button'] = "Resend";
 $string['category'] = "Resend activation email";
-$string['credits'] = 'Développé par François Garnier';
+$string['credits'] = 'Développed by François Garnier';
 $string['emailnotresent'] = "Error while resending the activation email.";
 $string['emailresent'] = "The activation email has been successfully resent.";
 $string['existingusernewpasswordtext'] = "Hello {firstname} {lastname},
