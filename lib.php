@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Lib file is defined here.
+ * This file contains the code for the plugin integration.
  *
  * @package     local_resend_password_profile
  * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+ 
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -50,15 +50,18 @@ function local_resend_password_profile_myprofile_navigation($tree, $user, $iscur
         null
     );
 
-    // Generate the form with the button.
-    $buttonhtml = '
-    <form action="' . new moodle_url('/local/resend_password_profile/resend_email.php') . '" method="post">
-        <input type="hidden" name="userid" value="' . $user->id . '">
-        <input type="hidden" name="sesskey" value="' . sesskey() . '">
-        <button type="submit" class="btn btn-primary">' . get_string('button', 'local_resend_password_profile') . '</button>
-    </form>';
+    // Create the single_button instance for the Resend button.
+    $resendbutton = new single_button(
+        new moodle_url('/local/resend_password_profile/resend_email.php', ['userid' => $user->id]),
+        get_string('button', 'local_resend_password_profile'),
+        'post'
+    );
 
-    // Creates a new node with the HTML button.
+    // Render the single_button to HTML.
+    global $OUTPUT;
+    $buttonhtml = $OUTPUT->render($resendbutton);
+
+    // Creates a new node with the rendered button HTML.
     $node = new core_user\output\myprofile\node(
         'category',
         'buttonnode',

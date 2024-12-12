@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - https://moodle.org/.
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,17 +15,29 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Version file is defined here.
+ * Privacy API implementation for local_resend_password_profile.
  *
  * @package     local_resend_password_profile
- * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @copyright   2024 François Garnier
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_resend_password_profile\privacy;
+
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_resend_password_profile';
-$plugin->version = 2024101123; // Plugin version.
-$plugin->requires = 2021051700; // Minimum required Moodle version.
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = 'v1.5';
+/**
+ * Privacy provider implementation for local_resend_password_profile.
+ *
+ * This plugin does not store any personal data.
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+    /**
+     * Returns a language string identifier explaining why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason(): string {
+        return 'privacy:metadata';
+    }
+}

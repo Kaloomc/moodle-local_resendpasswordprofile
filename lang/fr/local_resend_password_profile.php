@@ -47,6 +47,7 @@ Si vous avez besoin d’aide, veuillez contacter l’administrateur du site « {
 
 {sitename}";
 $string['pluginname'] = 'resend password profile';
+$string['privacy:metadata'] = 'Le plugin Resend Password Profile ne stocke aucune donnée personnelle.';
 $string['subject'] = 'Votre compte sur';
 
 

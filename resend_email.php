@@ -28,8 +28,9 @@ require_once($CFG->libdir . '/authlib.php'); // Include authentication libraries
 
 require_login(); // Check that the user is logged in.
 require_capability('moodle/user:create', context_system::instance()); // Check permissions.
+require_sesskey(); // Validate the sesskey for CSRF protection.
 
-// Page configuration.
+// Configuration page.
 $PAGE->set_url('/local/resend_password_profile/resend_email.php');
 $PAGE->set_context(context_system::instance());
 
@@ -43,7 +44,6 @@ $user = $DB->get_record('user', ['id' => $userid], '*', MUST_EXIST);
 if ($user->deleted) {
     throw new moodle_exception('invaliduser', 'error'); // Display an error if the user is deleted.
 }
-
 
 // Generate a new password.
 $newpassword = generate_password(8); // Generate a random password of 8 characters.
@@ -89,4 +89,3 @@ if (email_to_user($user, $noreplyuser, $subject, $message)) {
         3
     );
 }
-
