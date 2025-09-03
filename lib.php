@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die(); // phpcs:ignore moodle.Files.MoodleInternal.MoodleInternalNotNeeded
 
 /**
  * This file contains the code for the plugin integration.
@@ -49,7 +49,7 @@ function local_resend_password_profile_myprofile_navigation($tree, $user, $iscur
     $resendbutton = new single_button(
         new moodle_url('/local/resend_password_profile/resend_email.php', [
             'userid' => $user->id,
-            'sesskey' => sesskey()
+            'sesskey' => sesskey(),
         ]),
         get_string('button', 'local_resend_password_profile'),
         'post'
