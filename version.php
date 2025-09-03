@@ -18,14 +18,12 @@
  * Version file is defined here.
  *
  * @package     local_resend_password_profile
- * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @copyright   2025 François Garnier <francoisjgarnier@icloud.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_resend_password_profile';
-$plugin->version = 2024101124; // Plugin version.
-$plugin->requires = 2021051700; // Minimum required Moodle version.
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = 'v1.5';
+$plugin->version   = 2025090300;
+$plugin->requires  = 2024042200;

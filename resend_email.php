@@ -18,7 +18,7 @@
  * Resend email file is defined here.
  *
  * @package     local_resend_password_profile
- * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @copyright   2025 François Garnier <francoisjgarnier@icloud.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

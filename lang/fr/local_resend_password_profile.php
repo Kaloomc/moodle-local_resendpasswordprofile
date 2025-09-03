@@ -18,7 +18,7 @@
  * FR Lang file is defined here.
  *
  * @package     local_resend_password_profile
- * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @copyright   2025 François Garnier <francoisjgarnier@icloud.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -49,5 +49,3 @@ Si vous avez besoin d’aide, veuillez contacter l’administrateur du site « {
 $string['pluginname'] = 'resend password profile';
 $string['privacy:metadata'] = 'Le plugin Resend Password Profile ne stocke aucune donnée personnelle.';
 $string['subject'] = 'Votre compte sur';
-
-

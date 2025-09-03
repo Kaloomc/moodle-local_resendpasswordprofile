@@ -18,13 +18,13 @@
  * EN Lang file is defined here.
  *
  * @package     local_resend_password_profile
- * @copyright   2024 François Garnier <francoisjgarnier@icloud.com>
+ * @copyright   2025 François Garnier <francoisjgarnier@icloud.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['button'] = "Resend";
 $string['category'] = "Resend activation email";
-$string['credits'] = 'Développed by François Garnier';
+$string['credits'] = 'Developped by François Garnier';
 $string['emailnotresent'] = "Error while resending the activation email.";
 $string['emailresent'] = "The activation email has been successfully resent.";
 $string['existingusernewpasswordtext'] = "Hello {firstname} {lastname},
@@ -47,4 +47,5 @@ If you need help, please contact the administrator of the site « {sitename} » 
 
 {sitename}";
 $string['pluginname'] = 'resend password profile';
+$string['privacy:metadata'] = 'The Resend Password Profile plugin does not store any personal data.';
 $string['subject'] = 'Your account on';
