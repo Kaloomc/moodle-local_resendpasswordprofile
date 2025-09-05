@@ -15,37 +15,18 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * EN Lang file is defined here.
+ * EN Lang file for local_resend_password_profile.
  *
  * @package     local_resend_password_profile
- * @copyright   2025 François Garnier <francoisjgarnier@icloud.com>
+ * @copyright   2025 François Garnier
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['button'] = "Resend";
-$string['category'] = "Resend activation email";
-$string['credits'] = 'Developped by François Garnier';
-$string['emailnotresent'] = "Error while resending the activation email.";
-$string['emailresent'] = "The activation email has been successfully resent.";
-$string['existingusernewpasswordtext'] = "Hello {firstname} {lastname},
-
-Your account has been updated for you on the site « {sitename} » and a temporary password has been issued to you.
-
-The information required for your login is now:
-username: {username}
-password: {newpassword}
-
-You will need to change your password during your first login.
-
-To start working on « {sitename} », please log in by clicking the link below:
-{wwwroot}/login/?lang=en
-
-In most email clients, this address should appear as a blue clickable link. If it doesn't work, copy this link and paste it into the address bar of your web browser.
-
-If you need help, please contact the administrator of the site « {sitename} » by clicking this link:
-<a href='{wwwroot}/user/contactsitesupport.php'>Contact site support</a>.
-
-{sitename}";
-$string['pluginname'] = 'resend password profile';
+$string['button'] = 'Resend';
+$string['category'] = 'Resend activation email';
+$string['credits'] = 'Developed by François Garnier';
+$string['emailnotresent'] = 'Error while resending the activation email.';
+$string['emailresent'] = 'The activation email has been successfully resent.';
+$string['pluginname'] = 'Resend Password Profile';
 $string['privacy:metadata'] = 'The Resend Password Profile plugin does not store any personal data.';
 $string['subject'] = 'Your account on';
