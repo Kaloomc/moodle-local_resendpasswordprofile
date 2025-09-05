@@ -14,3 +14,11 @@ This plugin allows users to resend their passwords through an additional menu in
 - Moodle 3.0 or higher.
 - Access to the Moodle server for plugin installation.
 
+## Customization
+
+The automatic email sent when resending a password uses the following language string:
+
+- **`existingusernewpasswordtext`**
+
+You can customize this string through **Site administration > Language > Language customisation**.  
+This allows administrators to change the content of the email according to their institution’s needs (e.g., adding contact information, support links, or specific instructions).
