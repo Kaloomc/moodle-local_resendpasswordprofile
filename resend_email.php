@@ -97,4 +97,3 @@ if (email_to_user($user, $noreplyuser, $subject, $message)) {
         3
     );
 }
-
