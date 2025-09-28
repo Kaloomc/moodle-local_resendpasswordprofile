@@ -16,9 +16,28 @@ This plugin allows users to resend their passwords through an additional menu in
 
 ## Customization
 
-The automatic email sent when resending a password uses the following language string:
+The automatic email sent when resending a password uses the following language strings:
 
-- **`existingusernewpasswordtext`**
+- **`existingusernewpasswordtext`** → defines the body of the email.  
+- **`subject`** → defines the subject of the email.  
 
-You can customize this string through **Site administration > Language > Language customisation**.  
-This allows administrators to change the content of the email according to their institution’s needs (e.g., adding contact information, support links, or specific instructions).
+Both strings can be customized through **Site administration > Language > Language customisation**.
+
+### Available placeholders
+
+You can insert dynamic information into the email subject and body using the following placeholders:
+
+#### Subject placeholders
+- `{firstname}` → The user's first name  
+- `{lastname}` → The user's last name  
+- `{sitename}` → The full name of the Moodle site  
+- `{username}` → The user's Moodle username  
+- `{wwwroot}` → The base URL of the Moodle site  
+
+#### Message body placeholders
+- `{firstname}` → The user's first name  
+- `{lastname}` → The user's last name  
+- `{sitename}` → The full name of the Moodle site  
+- `{username}` → The user's Moodle username  
+- `{newpassword}` → The newly generated password  
+- `{wwwroot}` → The base URL of the Moodle site  
