@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_resend_password_profile';
-$plugin->version   = 2025090501;
+$plugin->version   = 2025092300;
 $plugin->requires  = 2024042200;
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '2.0.2';
+$plugin->release   = '2.0.3';

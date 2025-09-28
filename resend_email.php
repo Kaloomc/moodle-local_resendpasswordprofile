@@ -58,7 +58,7 @@ set_user_preference('auth_forcepasswordchange', 1, $user);
 $sitename = format_string($SITE->fullname);
 
 // Create the email content with the username.
-$subject = get_string('subject', 'local_resend_password_profile') . " {$sitename}";
+$subjecttemplate = get_string('subject', 'local_resend_password_profile');
 $messagetemplate = get_string('existingusernewpasswordtext', 'local_resend_password_profile');
 
 // Replace variables in the message.
@@ -66,6 +66,13 @@ $message = str_replace(
     ['{firstname}', '{lastname}', '{sitename}', '{username}', '{newpassword}', '{wwwroot}'],
     [$user->firstname, $user->lastname, $sitename, $user->username, $newpassword, $CFG->wwwroot],
     $messagetemplate
+);
+
+// Replace variables in the subject.
+$subject = str_replace(
+    ['{firstname}', '{lastname}', '{sitename}', '{username}', '{wwwroot}'],
+    [$user->firstname, $user->lastname, $sitename, $user->username, $CFG->wwwroot],
+    $subjecttemplate
 );
 
 // Define the site's "noreply" user.
