@@ -36,7 +36,7 @@ defined('MOODLE_INTERNAL') || die(); // phpcs:ignore moodle.Files.MoodleInternal
  * @return void
  */
 function local_resend_password_profile_myprofile_navigation($tree, $user, $iscurrentuser, $course) {
-    if (!isloggedin() || !is_siteadmin()) {
+    if (!isloggedin()  || !has_capability('local/resend_password_profile:resend', context_system::instance())) {
         return;
     }
 
